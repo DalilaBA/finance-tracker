@@ -11,7 +11,7 @@ User.create(email: "exp2@exp.com", password: "123456")
 User.create(email: "exp3@exp.com", password: "123456")
 User.create(email: "exp4@exp.com", password: "123456")
 
-Stock.create(ticker: "AAPL",name: "Apple inc" )
+Stock.create(ticker: "AAPL",name: "Apple inc", last_price: "11258")
 Stock.create(ticker: "GOOG",name: "Google inc" )
 Stock.create(ticker: "MSFT",name: "Microsoft inc" )
 Stock.create(ticker: "AMZN",name: "Amazone inc" )
