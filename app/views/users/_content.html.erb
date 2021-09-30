@@ -4,7 +4,6 @@
     <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Ticker</th>
       <th scope="col">Name</th>
       <th scope="col">Price</th>
@@ -14,11 +13,10 @@
   <tbody>
   <% @tracked_stocks.each do |stock| %>
     <tr>
-      <th scope="row"><%= stock.id %></th>
       <td><%= stock.ticker %></td>
       <td><%= stock.name %></td>
       <td><%= stock.last_price %></td>
-      <td><%= 'Action placeholder' %></td>
+      <td><%= link_to "Remove", user_stock_path(stock), method: :delete, data: {confirm: "Are you sure"}, class: 'btn btn-sm btn-danger' %></td>
 
     </tr>
   <% end %>
