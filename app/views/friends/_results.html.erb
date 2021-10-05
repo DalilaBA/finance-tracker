@@ -1,0 +1,11 @@
+<div class="results-block">
+  <%= render 'layouts/messages' %>
+</div>
+
+<% if @friend %> 
+<div class="card card-header results-block">
+  <strong>Name: </strong><%= @friend %>
+  <strong>Email: </strong><%= @friend%>
+  
+</div>
+<% end %>
