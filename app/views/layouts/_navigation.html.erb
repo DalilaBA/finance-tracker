@@ -21,12 +21,12 @@
         <%= link_to "Log in", user_session_path, class: "btn btn-info rounded  " %>
       </span>
       <span class="navbar-text mr-1 ">
-        <%= link_to "Sign in", new_user_session_path, class: "btn btn-info rounded  " %>
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-info rounded  " %>
       </span>
     <% else %>
       <span class="navbar-text dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= current_user.email %>
+          <%= current_user.name %>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to "Profile", users_path, class: "dropdown-item" %>
