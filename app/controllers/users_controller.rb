@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def my_friends
-    @friends = current_user.friends
+    @current_friends = current_user.friends
   end
   def index
 
@@ -18,25 +18,21 @@ class UsersController < ApplicationController
   end
 
   def search
-    
     if params[:friend].present?
-      @friend = params[:friend]
-      # render json: stock
-      if @friend
+      @friends = User.search_param(params[:friend]).without(current_user)
+      if @friends
         respond_to do |format|
           format.js {render partial: 'friends/results'}
         end
-        # render 'users/my_portfolio'
       else
         respond_to do |format|
-          flash.now[:alert] = "Please enter a valide symbol to search"
+          flash.now[:alert] = "Couldn't find user"
           format.js {render partial: 'friends/results'}
         end
-        # redirect_to my_portfolio_path
       end
     else
       respond_to do |format|
-        flash.now[:alert] = "Please enter a symbol to search"
+        flash.now[:alert] = "Please enter a friend name or email to search"
         format.js {render partial: 'friends/results'}
       end
     end
